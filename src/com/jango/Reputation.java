@@ -46,9 +46,9 @@ public class Reputation {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		int[] sb = {0,-1};
-		int[] sg = {0,-7};
-		int m = 2;
+		int[] sb = {1,1};
+		int[] sg = {-9,-7};
+		int m = 4;
 		
 		int n = 2;
 		int rep = 0;
@@ -77,7 +77,7 @@ public class Reputation {
 		
 		System.out.println(" -- 1 --> "+rep);
 		
-		if(sb[maxIndex] < sg[maxIndex]){
+		if(Math.abs(sb[maxIndex]) < Math.abs(sg[maxIndex])){
 			if(sb[maxIndex] > 0){
 				sb[maxIndex] += m;
 			}else{
