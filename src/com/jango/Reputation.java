@@ -46,8 +46,8 @@ public class Reputation {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		int[] sb = {1,-1};
-		int[] sg = {-1,1};
+		int[] sb = {0,-1};
+		int[] sg = {0,-7};
 		int m = 2;
 		
 		int n = 2;
@@ -60,24 +60,35 @@ public class Reputation {
 			
 			int sbm = sb[i];
 			int sgm = sg[i];
-			int temp = Math.abs(sbm) > Math.abs(sgm) ? sbm : sgm;
+			int temp = Math.abs(sbm) > Math.abs(sgm) ? Math.abs(sbm) : Math.abs(sgm);
+			System.out.println(" --  max "+max);
+			System.out.println(" -- temp "+temp);
 			if(Math.abs(max) < temp){
 				max = temp;
 				maxIndex = i;
 			}
 			rep += sb[i] * sg[i];
-//			System.out.println(" --> "+ rep);
+			System.out.println(" --> "+ rep);
 			
 		}
+		System.out.println("max index "+maxIndex);
 		
 		rep = rep - (sb[maxIndex] * sg[maxIndex]);
 		
-//		System.out.println(" -- 1 --> "+rep);
+		System.out.println(" -- 1 --> "+rep);
 		
 		if(sb[maxIndex] < sg[maxIndex]){
-			sb[maxIndex] += m;
+			if(sb[maxIndex] > 0){
+				sb[maxIndex] += m;
+			}else{
+				sb[maxIndex] -= m;
+			}
 		}else{
-			sg[maxIndex] += m;
+			if(sg[maxIndex] > 0){
+				sg[maxIndex] += m;
+			}else{
+				sg[maxIndex] -= m;
+			}
 		}
 		
 		rep += (sb[maxIndex] * sg[maxIndex]);
