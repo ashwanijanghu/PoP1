@@ -48,7 +48,7 @@ public class Reputation {
 		
 		int[] sb = {1,1};
 		int[] sg = {-9,-7};
-		int m = 4;
+		int m = 3;
 		
 		int n = 2;
 		int rep = 0;
@@ -78,13 +78,13 @@ public class Reputation {
 		System.out.println(" -- 1 --> "+rep);
 		
 		if(Math.abs(sb[maxIndex]) < Math.abs(sg[maxIndex])){
-			if(sb[maxIndex] > 0){
+			if(sg[maxIndex] > 0){
 				sb[maxIndex] += m;
 			}else{
 				sb[maxIndex] -= m;
 			}
 		}else{
-			if(sg[maxIndex] > 0){
+			if(sb[maxIndex] > 0){
 				sg[maxIndex] += m;
 			}else{
 				sg[maxIndex] -= m;
